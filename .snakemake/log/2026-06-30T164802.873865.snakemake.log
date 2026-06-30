@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule fastqc in file /mnt/d/snakemake-fastqc/Snakefile, line 5:
+Missing input files for rule fastqc:
+    output: results/sample_1_fastqc.html, results/sample_1_fastqc.zip, results/sample_2_fastqc.html, results/sample_2_fastqc.zip
+    affected files:
+        data/sample_1.fastq.gz
+        data/sample_2.fastq.gz
