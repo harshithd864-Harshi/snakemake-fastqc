@@ -1,2 +1,12 @@
+# Ignore FASTQ files
 data/*.fastq
+
+# Ignore Snakemake working directory
+.snakemake/
+
+# Ignore output files
 results/
+
+# Python cache
+__pycache__/
+*.pyc
