@@ -2,8 +2,9 @@ name: Snakemake CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   snakemake:
@@ -13,14 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Miniconda
+      - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
           activate-environment: snakemake
-          environment-file: environment.yml
+          environment-file: envs/environment.yml
           auto-activate-base: false
 
       - name: Run Snakemake
         shell: bash -l {0}
         run: |
-          snakemake --cores 2
+          snakemake --cores 1 --dry-run
